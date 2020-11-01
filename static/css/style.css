@@ -69,13 +69,11 @@ a:hover {
 
 .page-description-wrap {
   text-align: center;
-  display: flex;
-  justify-content: center;
 
 }
 
 .page-description {
-  width: 400px;
+  max-width: 400px;
   text-align: center;
   font-size: 1rem;
 
@@ -191,7 +189,12 @@ a:hover {
   padding: 2.5em 0;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
+
+  body {
+    margin: 0px 50px;
+  }
+
   .site-section {
     padding: 5em 0;
   }
