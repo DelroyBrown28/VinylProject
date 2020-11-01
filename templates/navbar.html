@@ -3,7 +3,7 @@
         <a href="#" class="brand-logo">V I N Y L</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a class="nav_item" href="/">Home</a></li>
-            <li><a class="nav_item" href="/">Shop</a></li>
+            <li><a class="nav_item" href="{% url 'cart:product-list' %}">Shop</a></li>
             <li><a class="nav_item" href="{% url 'contact' %}">Contact</a></li>
             <li>
                 {% if request.user.is_authenticated %}
