@@ -1,6 +1,6 @@
-from pathlib import Path
+import os
 import environ
-from vinylMain.settings import ALLOWED_HOSTS, DATABASES
+from pathlib import Path
 
 
 env = environ.Env()
