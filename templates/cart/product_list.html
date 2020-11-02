@@ -16,31 +16,24 @@
 </div>
 
 
-<div class="site-section">
-    <div class="container">
-        <div class="row mb-5">
-            {% for product in object_list  %}
-            <div class="col-lg-4 col-md-5 mb-4" data-aos="fade-up">
+<div class="row mb-3 all-product-wrap" style="border: 1px solid red;">
+    {% for product in object_list  %}
+    <div class="col-lg-3 col-md-5 product-wrap" data-aos="fade-up">
 
-                <figure class="block-4-image">
-                    <a><img src="{{ product.image.url }}" alt="Album image" class="img-fluid"></a>
-                </figure>
-                <div class="block-4-text p-4">
-                    <a>
-                        <h3>{{ Product.artist_name }}</h3>
-                    </a>
-                    <p class="mb-0">{{ product.description }}</p>
-                </div>
-            </div>
-            {% endfor %}
-
-
+        <figure class="block-4-image">
+            <a><img src="{{ product.image.url }}" alt="Album image" class="img-fluid product-image"></a>
+        </figure>
+        <div class="block-4-text p-4">
+            <a>
+                <h3 class="artists-name">{{ product.artist_name }}</h3>
+            </a>
+            <p class="album-name">{{ product.album_title }}</p>
+            <p class="mb-0">{{ product.description }}</p>
         </div>
     </div>
+    {% endfor %}
 </div>
 
-{% for product in object_list  %}
-<p>{{ product.artist_name }}</p>
-{% endfor %}
+
 
 {% endblock content %}

@@ -98,6 +98,52 @@ a:hover {
   color: #000 !important;
 }
 
+.product-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+
+  border: 1px solid red;
+}
+
+.artists-name {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #000;
+
+  margin: 0;
+  transform: translateY(-65px);
+}
+
+.album-name {
+  margin: 0;
+  transform: translateY(-65px);
+  text-align: center;
+}
+
+.all-product-wrap {
+  margin: 0;
+}
+
+.product-image {
+  height: 300px;
+  animation-name: spin;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 
 .site-wrap:before {
   -webkit-transition: .3s all ease-in-out;
