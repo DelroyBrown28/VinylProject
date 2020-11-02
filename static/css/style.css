@@ -115,7 +115,7 @@ a:hover {
   flex-flow: column;
   border-right: 1px solid rgba(0, 0, 0, 0.575);
   border-left: 1px solid rgba(0, 0, 0, 0.575);
-  
+
 }
 
 
@@ -152,6 +152,113 @@ a:hover {
     transform: rotate(360deg);
   }
 }
+
+
+/*
+  =============== 
+  PRODUCT DETAIL PAGE
+  ===============
+  */
+
+.product-detail-body {
+  background-color: #676C69;
+}
+
+.product-container {
+  width: 100%;
+  height: 800px;
+
+}
+
+.product-image-box,
+.product-detail-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  border-bottom: 1px solid #F4FFF7;
+  border-top: 1px solid #F4FFF7;
+
+}
+
+.product-detail-box {
+  border-right: 1px solid #F4FFF7;
+}
+
+.product-image-box {
+  border-right: 1px solid #F4FFF7;
+  border-left: 1px solid #F4FFF7;
+}
+
+.product-detail-name {
+  font-size: 1.7rem;
+  color: #F4FFF7;
+  margin: 0;
+  line-height: 30px;
+}
+
+.product-detail-album {
+  font-size: 1.2rem;
+  color: #F4FFF7;
+  font-weight: 200;
+  margin: 0;
+}
+
+.button-row {
+  position: absolute;
+  width: 100%;
+  margin: 0;
+  bottom: 0;
+  border-top: 1px solid #F4FFF7;
+}
+
+.main-btn-style {
+  width: 100%;
+  height: 55px;
+  color: #F4FFF7;
+  background-color: transparent;
+  border: none;
+  font-weight: 300;
+  font-family: 'Roboto Condensed', sans-serif;
+  cursor: pointer;
+
+}
+
+.buy-btn {
+  border-right: 1px solid #F4FFF7;
+}
+
+.nav_item_product_detail {
+  color: #F4FFF7;
+}
+
+.white-icons {
+  color: #F4FFF7 !important;
+  font-size: 1.2rem;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .site-wrap:before {

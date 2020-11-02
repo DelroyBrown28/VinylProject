@@ -36,6 +36,7 @@ class Product(models.Model):
     album_title = models.CharField(max_length=150, null=False)
     slug = models.SlugField(unique=True)
     image = models.ImageField(upload_to='product_images')
+    image_2 = models.ImageField(upload_to='product_images')
     description = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)

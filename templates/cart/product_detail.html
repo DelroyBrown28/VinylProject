@@ -1,22 +1,31 @@
-{% extends "base.html" %}
-
+{% extends "product-detail-base.html" %}
 
 {% block content %}
+    <body class="product-detail-body">
 
-<div class="bg-light py-3">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 mb-0">
-                <a href="{% url 'home' %}">Home</a>
-                <span class="mx-2 mb-0">/</span>
-                <strong class="text-black">{{product.title}}</strong>
+    <div class="row product-container">
+
+        <div class="col-md-6 product-image-box" data-aos="fade">
+            <img src="{{ product.image_2.url }}" class="img-fluid">
+        </div>
+
+        <div class="col-md-6 product-detail-box" data-aos="fade">
+            <p class="product-detail-name">{{product.artist_name}}</p>
+            <p class="product-detail-album">{{product.album_title}}</p>
+            <p class="product-detail-album mt-4">{{product.description}}</p>
+
+            <div class="button-row row">
+                <div class="col-md-6 btn-wrap buy-btn" style="padding: 0px">
+                    <button class="main-btn-style">BUY</button>
+                </div>
+                <div class="col-md-6" style="padding: 0px">
+                    <button class="main-btn-style">BUY SECOND HAND</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-
-<div class="row mb-3 all-product-wrap">
+    <!-- <div style="border: 1px solid red;" class="row mb-3 all-product-wrap">
     <div class="col-md-6">
         <img src="{{ product.image.url }}" class="img-fluid product-image">
     </div>
@@ -28,8 +37,9 @@
 
     </div>
 
-</div>
+</div> -->
 
 
 
-{% endblock content %}
+</body>
+    {% endblock content %}
