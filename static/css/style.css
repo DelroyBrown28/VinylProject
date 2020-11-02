@@ -162,7 +162,7 @@ a:hover {
 
 .product-detail-body {
   background-color: #676C69;
-  
+
 }
 
 .product-container {
@@ -240,11 +240,29 @@ a:hover {
 
 }
 
-@media (min-width 900px) {
+.product-detail-image {
+  height: 300px;
+}
+
+@media (max-width: 900px) {
+
   .product-container {
     flex-flow: column;
+    width: inherit;
   }
-} 
+  .product-image-box {
+    height: inherit;
+  }
+
+  .product-detail-box {
+    height: inherit;
+    border-left: 1px solid #F4FFF7;
+  }
+
+  .button-row {
+    flex-flow: row;
+  }
+}
 
 
 
