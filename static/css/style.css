@@ -80,9 +80,14 @@ a:hover {
 }
 
 .page-icon-wrap {
+  margin: 0 !important;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.page-icon {
+  margin: 0;
 }
 
 .page-content-title {
@@ -98,14 +103,21 @@ a:hover {
   color: #000 !important;
 }
 
+.all-product-wrap {
+  margin: 0;
+  /* border: 1px solid #000; */
+}
+
 .product-wrap {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-flow: column;
-
-  border: 1px solid red;
+  border-right: 1px solid rgba(0, 0, 0, 0.575);
+  border-left: 1px solid rgba(0, 0, 0, 0.575);
+  
 }
+
 
 .artists-name {
   text-align: center;
@@ -122,9 +134,6 @@ a:hover {
   text-align: center;
 }
 
-.all-product-wrap {
-  margin: 0;
-}
 
 .product-image {
   height: 300px;
