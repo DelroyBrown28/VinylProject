@@ -162,9 +162,11 @@ a:hover {
 
 .product-detail-body {
   background-color: #676C69;
+  
 }
 
 .product-container {
+  display: flex;
   width: 100%;
   height: 800px;
 
@@ -214,7 +216,7 @@ a:hover {
 
 .main-btn-style {
   width: 100%;
-  height: 55px;
+  min-height: 55px;
   color: #F4FFF7;
   background-color: transparent;
   border: none;
@@ -237,6 +239,12 @@ a:hover {
   font-size: 1.2rem;
 
 }
+
+@media (min-width 900px) {
+  .product-container {
+    flex-flow: column;
+  }
+} 
 
 
 
