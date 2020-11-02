@@ -174,12 +174,24 @@ a:hover {
 
 .product-image-box,
 .product-detail-box {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-flow: column;
   border-bottom: 1px solid #F4FFF7;
   border-top: 1px solid #F4FFF7;
+  padding: 0;
+
+}
+
+
+.product-details-wrap {
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+
+  text-align: center;
 
 }
 
@@ -211,6 +223,7 @@ a:hover {
   width: 100%;
   margin: 0;
   bottom: 0;
+  padding: 0;
   border-top: 1px solid #F4FFF7;
 }
 
@@ -223,7 +236,13 @@ a:hover {
   font-weight: 300;
   font-family: 'Roboto Condensed', sans-serif;
   cursor: pointer;
+  transition: 0.3s;
 
+}
+
+.main-btn-style:hover {
+  background-color: #f4fff71f;
+  /* color: #000; */
 }
 
 .buy-btn {
@@ -244,12 +263,24 @@ a:hover {
   height: 300px;
 }
 
+.product-quantity {
+  width: 50%;
+
+}
+
+#id_quantity {
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+}
+
 @media (max-width: 900px) {
 
   .product-container {
     flex-flow: column;
     width: inherit;
   }
+
   .product-image-box {
     height: inherit;
   }

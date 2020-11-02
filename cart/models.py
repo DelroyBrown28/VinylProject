@@ -56,11 +56,14 @@ class OrderItem(models.Model):
     quantity = models.PositiveIntegerField(default=1)
     
     def __str__(self):
-        return f"{self.quantity} x {self.product.title}"
+        return f"{self.product.artist_name} / {self.product.album_title} - {self.quantity}x"
     
 
 class Order(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User,
+                            blank=True,
+                            null=True,
+                            on_delete=models.CASCADE)
     start_date = models.DateTimeField(auto_now_add=True)
     ordered_date = models.DateTimeField(blank=True, null=True)
     ordered = models.BooleanField(default=False)
@@ -77,7 +80,7 @@ class Order(models.Model):
                                         on_delete=models.SET_NULL)
     
     def __str__(self):
-        return self.refernce_number
+        return self.reference_number
     
     @property
     def reference_number(self):

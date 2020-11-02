@@ -1,4 +1,5 @@
 {% extends "product-detail-base.html" %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 
@@ -8,22 +9,31 @@
 
         <div class="col-md-6 product-image-box" data-aos="fade">
             <img src="{{ product.image_2.url }}" class="img-fluid product-detail-image">
+            <form method="POST" class="product-quantity">
+
+            </form>
         </div>
 
-        <div class="col-md-6 product-detail-box" data-aos="fade">
-            <p class="product-detail-name">{{product.artist_name}}</p>
-            <p class="product-detail-album">{{product.album_title}}</p>
-            <p class="product-detail-album mt-4">{{product.description}}</p>
+        <form method="POST" class="col-md-6 product-detail-box" data-aos="fade">
+            {% csrf_token %}
+            <div class="row product-details-wrap">
+                <p class="product-detail-name">{{product.artist_name}}</p>
+                <p class="product-detail-album">{{product.album_title}}</p>
+                <p class="product-detail-album mt-4 mb-4">{{product.description}}</p>
+                {{ form|crispy }}
+            </div>
+
 
             <div class="button-row row">
                 <div class="col-md-6 btn-wrap buy-btn" style="padding: 0px">
-                    <button class="main-btn-style">BUY</button>
+
+                    <button type="submit" class="main-btn-style">BUY</button>
                 </div>
                 <div class="col-md-6" style="padding: 0px">
                     <button class="main-btn-style">BUY SECOND HAND</button>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
 
 </body>
