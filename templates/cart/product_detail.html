@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<div class="bg-light py-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mb-0">
+                <a href="{% url 'home' %}">Home</a>
+                <span class="mx-2 mb-0">/</span>
+                <strong class="text-black">{{product.title}}</strong>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row mb-3 all-product-wrap">
+    <div class="col-md-6">
+        <img src="{{ product.image.url }}" class="img-fluid product-image">
+    </div>
+    <div class="col-md-6" data-aos="fade-up">
+
+        <h2 class="text-black artists-name">{{ product.artist_name }}</h2>
+        <p class="album-name">{{ product.album_title }}</p>
+        <p class="mb-0">{{ product.description }}</p>
+
+    </div>
+
+</div>
+
+
+
+{% endblock content %}
