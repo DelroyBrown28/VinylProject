@@ -6,6 +6,7 @@ from django.shortcuts import reverse
 
 
 
+
 User = get_user_model()
 
 
@@ -29,7 +30,14 @@ class Address(models.Model):
     class Meta:
         verbose_name_plural = 'Adresses'
     
+
+class FormatVariation(models.Model):
+    name = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.name
     
+
     
 class Product(models.Model):
     artist_name = models.CharField(max_length=150, null=False)
@@ -41,6 +49,7 @@ class Product(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     active = models.BooleanField(default=False)
+    available_formats = models.ManyToManyField(FormatVariation)
     
     def __str__(self):
         return self.artist_name
@@ -54,6 +63,7 @@ class OrderItem(models.Model):
     order = models.ForeignKey("Order", related_name='items', on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(default=1)
+    format = models.ForeignKey(FormatVariation, on_delete=models.CASCADE)
     
     def __str__(self):
         return f"{self.product.artist_name} / {self.product.album_title} - {self.quantity}x"
