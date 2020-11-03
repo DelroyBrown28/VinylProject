@@ -1,5 +1,5 @@
 {% extends "product-detail-base.html" %}
-
+{% load static %}
 
 {% block content %}
 {% include 'navbar.html' %}
@@ -9,7 +9,7 @@
         {% for item in order.items.all  %}
         <div class="product-detail-box col-md-12">
 
-            <a href="#" class="mb-4" style="text-align: center;">
+            <a href="{% url 'cart:remove-from-cart' item.id %}" class="mb-4" style="text-align: center;">
                 <i class="material-icons">delete_forever</i>
                 <br>
                 Remove
@@ -20,29 +20,45 @@
                 <div class="row product-info-wrap">
                     <p class="artist-name">{{ item.product.artist_name }}</p>
                     <p class="album-title">{{ item.product.album_title }}</p>
-                    <p class="item-price">£{{ item.product.get_price }}</p>
+                    <p class="main-item-price">£{{ item.product.get_price }}</p>
                     <p class="album-title" style="color: red;">{{ item.format.name }}</p>
                 </div>
-                
+
                 <span class="row justify-content-center mb-0">
                     <small class="quantity">Quantity</small>
                 </span>
                 <div class="input-group product-quantity mb-3">
                     <div class="input-group-prepend">
-                        <a href="#" class="minus-btn btn btn-outline-primary">
+                        <a href="{% url 'cart:decrease-quantity' item.id %}" class="minus-btn btn btn-outline-primary">
                             <i class="material-icons quantity-icons">arrow_drop_down</i>
                         </a>
                     </div>
                     <input type="text" class="form-control quantity-input text-center" value="{{ item.quantity }}">
                     <div class="input-group-append">
-                        <a href="#" class="minus-btn btn btn-outline-primary">
+                        <a href="{% url 'cart:increase-quantity' item.id %}" class="minus-btn btn btn-outline-primary">
                             <i class="material-icons quantity-icons">arrow_drop_up</i>
                         </a>
                     </div>
                 </div>
-                <p class="item-price">Total: <strong>£{{ item.get_total_item_price }}</strong></p>
+                <p class="item-price">Product Total: <strong>£{{ item.get_total_item_price }}</strong></p>
             </div>
         </div>
+        {% empty %}
+
+        <div class="empty-cart">
+            <p class="empty-cart-text">Your cart is empty.</p>
+            <div class="sad-face-wrap">
+                <img src="{% static '/images/sad.png' %}" alt="sad face" class="sad1 sad-face-img">
+                <img src="{% static '/images/saddark.png' %}" alt="sad face" class="sad2 sad-face-img">
+                <img src="{% static '/images/sad.png' %}" alt="sad face" class="sad1 sad-face-img">
+                <img src="{% static '/images/saddark.png' %}" alt="sad face" class="sad2 sad-face-img">
+                <img src="{% static '/images/sad.png' %}" alt="sad face" class="sad1 sad-face-img">
+                <img src="{% static '/images/saddark.png' %}" alt="sad face" class="sad2 sad-face-img">
+            </div>
+            <a href="{% url 'cart:product-list' %}" class="mt-4 visit-store-text">Visit the store</a>
+        </div>
+
+
         {% endfor %}
     </div>
     <div class="col-md-6 cart-product-checkout-wrap">

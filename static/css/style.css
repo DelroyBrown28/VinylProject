@@ -9,6 +9,11 @@ body {
 
 }
 
+/* DELETE ME */
+.redborder {
+  border: 1px solid red;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -316,8 +321,8 @@ a:hover {
 }
 
 .cart-product-checkout-wrap {
-  border-radius: 0px;
-  background: #F4FFF7;
+  height: 800px;
+
 
 }
 
@@ -379,7 +384,7 @@ a:hover {
 }
 
 .quantity {
-  text-align:center ;
+  text-align: center;
 
 }
 
@@ -393,11 +398,87 @@ a:hover {
   border-bottom: 1px solid #000;
 }
 
+.empty-cart {
+  height: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
 
+}
 
+.sad-face-img {
+  height: 2rem;
+}
 
+.sad-face-wrap {
+  min-width: 250px;
+  display: flex;
+  justify-content: space-between;
 
+}
 
+.empty-cart-text {
+  color: #000;
+  font-weight: 300;
+  font-size: 3rem;
+}
+
+@media (max-width: 440px) {
+  .empty-cart-text {
+    font-size: 2rem;
+  }
+}
+
+.visit-store-text {
+  background-color: #000;
+  color: #F4FFF7;
+  font-weight: 300;
+  opacity: 0.7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 250px;
+  font-size: 1.3rem;
+  border: 1px solid #000;
+  padding: 3px 0px;
+}
+
+.sad1 {
+  animation-name: sadSpinnersClockwise;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+}
+
+.sad2 {
+  animation-name: sadSpinnersAntiClockwise;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+}
+
+@keyframes sadSpinnersClockwise {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes sadSpinnersAntiClockwise {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
+}
 
 
 
