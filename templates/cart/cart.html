@@ -5,18 +5,25 @@
 {% include 'navbar.html' %}
 
 <div style="width: 100%;" class="row">
-    <div class="cart-product-detail-wrap col-md-6">
+    <div class="cart-product-detail-wrap col-md-6" data-aos="fade">
         {% for item in order.items.all  %}
         <div class="product-detail-box col-md-12">
-            <span>X</span>
+
+            <a href="#" class="mb-4" style="text-align: center;">
+                <i class="material-icons">delete_forever</i>
+                <br>
+                Remove
+            </a>
+
             <img src="{{ item.product.image_2.url }}" class="img-fluid cart-product-image" alt="Record Image">
             <div class="cart-product-albumtitle-wrap">
                 <div class="row product-info-wrap">
                     <p class="artist-name">{{ item.product.artist_name }}</p>
                     <p class="album-title">{{ item.product.album_title }}</p>
+                    <p class="item-price">£{{ item.product.get_price }}</p>
                     <p class="album-title" style="color: red;">{{ item.format.name }}</p>
                 </div>
-
+                
                 <span class="row justify-content-center mb-0">
                     <small class="quantity">Quantity</small>
                 </span>
@@ -33,6 +40,7 @@
                         </a>
                     </div>
                 </div>
+                <p class="item-price">Total: <strong>£{{ item.get_total_item_price }}</strong></p>
             </div>
         </div>
         {% endfor %}

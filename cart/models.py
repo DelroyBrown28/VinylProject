@@ -45,6 +45,7 @@ class Product(models.Model):
     slug = models.SlugField(unique=True)
     image = models.ImageField(upload_to='product_images')
     image_2 = models.ImageField(upload_to='product_images')
+    price = models.IntegerField(default=0)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     active = models.BooleanField(default=False)
@@ -55,6 +56,10 @@ class Product(models.Model):
 
     def get_absolute_url(self):
         return reverse("cart:product-detail", kwargs={"slug": self.slug})
+
+    def get_price(self):
+
+        return "{:.2f}".format(self.price / 100)
     
     
 
@@ -66,7 +71,16 @@ class OrderItem(models.Model):
     
     def __str__(self):
         return f"{self.product.artist_name} / {self.product.album_title} - {self.quantity}x"
+
+    def get_raw_total_item_price(self):
+        return self.quantity * self.product.price 
     
+    def get_total_item_price(self):
+        price = self.get_raw_total_item_price()
+        return "{:.2f}".format(price / 100)
+
+
+
 
 class Order(models.Model):
     user = models.ForeignKey(User,
