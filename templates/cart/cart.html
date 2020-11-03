@@ -61,8 +61,23 @@
 
         {% endfor %}
     </div>
-    <div class="col-md-6 cart-product-checkout-wrap">
-
+    <div style="padding: 0;" class="col-md-6 cart-product-checkout-wrap" data-aos="fade">
+        {% if order.items.count > 0 %}
+        <div class="col-md-12 cart-product-checkout ">
+            <h3 class="grand-total-text mb-4">C A R T<span style="visibility: hidden;">...</span>T O T A L</h3>
+            <div class="totals-wrap ">
+                <p class="subtotal-total-text">
+                    Subtotal
+                    <span>£{{ order.get_subtotal }}</span>
+                </p>
+                <p class="complete-total-text">
+                    Complete Total
+                    <span>£{{ order.get_total }}</span>
+                </p>
+            </div>
+            <a href="{% url 'cart:product-list' %}" class="back-to-store-btn mt-4">Continue Browsing</a>
+        </div>
+        {% endif %}
     </div>
 </div>
 

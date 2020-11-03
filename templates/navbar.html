@@ -1,3 +1,5 @@
+{% load cart_template_tags %}
+
 <nav class="main-nav">
     <div class="nav-wrapper">
         <a href="#" class="brand-logo">V I N Y L</a>
@@ -15,7 +17,7 @@
             <li>
                 <a href="{% url 'cart:summary' %}" class="site-cart icons">
                     <span><i class="fas fa-shopping-cart icons"></i></span>
-                    <span class="count">0</span>
+                    <span class="count">{{ request|cart_item_count }}</span>
                 </a>
             </li>
             <li class="d-inline-block d-md-none ml-md-0">
