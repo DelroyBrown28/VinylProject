@@ -1,0 +1,46 @@
+{% extends "product-detail-base.html" %}
+
+
+{% block content %}
+{% include 'navbar.html' %}
+
+<div style="width: 100%;" class="row">
+    <div class="cart-product-detail-wrap col-md-6">
+        {% for item in order.items.all  %}
+        <div class="product-detail-box col-md-12">
+            <span>X</span>
+            <img src="{{ item.product.image_2.url }}" class="img-fluid cart-product-image" alt="Record Image">
+            <div class="cart-product-albumtitle-wrap">
+                <div class="row product-info-wrap">
+                    <p class="artist-name">{{ item.product.artist_name }}</p>
+                    <p class="album-title">{{ item.product.album_title }}</p>
+                    <p class="album-title" style="color: red;">{{ item.format.name }}</p>
+                </div>
+
+                <span class="row justify-content-center mb-0">
+                    <small class="quantity">Quantity</small>
+                </span>
+                <div class="input-group product-quantity mb-3">
+                    <div class="input-group-prepend">
+                        <a href="#" class="minus-btn btn btn-outline-primary">
+                            <i class="material-icons quantity-icons">arrow_drop_down</i>
+                        </a>
+                    </div>
+                    <input type="text" class="form-control quantity-input text-center" value="{{ item.quantity }}">
+                    <div class="input-group-append">
+                        <a href="#" class="minus-btn btn btn-outline-primary">
+                            <i class="material-icons quantity-icons">arrow_drop_up</i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="col-md-6 cart-product-checkout-wrap">
+
+    </div>
+</div>
+
+
+{% endblock content %}

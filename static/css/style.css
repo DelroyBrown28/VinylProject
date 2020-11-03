@@ -9,6 +9,10 @@ body {
 
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 ::-moz-selection {
   background: #000;
   color: #fff;
@@ -295,19 +299,96 @@ a:hover {
   }
 }
 
+/*
+  ================ 
+  CART DETAIL PAGE
+  ================
+  */
 
+.cart-product-detail-wrap {
+  height: 800px;
+  width: 100%;
+  padding: 0;
+  overflow: auto;
 
+}
 
+.cart-product-checkout-wrap {
+  border-radius: 0px;
+  background: #F4FFF7;
+  box-shadow: -5px 5px 0px #b2bab4,
+    5px -5px 0px #ffffff;
+  transition: 1s;
 
+}
 
+.cart-product-checkout-wrap:hover {
+  border-radius: 0px;
+  background: #F4FFF7;
+  box-shadow: -5px 5px 13px #b2bab4,
+    5px -5px 13px #ffffff;
+}
 
+.product-detail-box {
+  height: 100%;
 
+}
 
+.cart-product-image {
+  height: 300px;
+}
 
+.product-info-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
 
+}
 
+.artist-name,
+.album-title {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #000;
+}
 
+.album-title {
+  font-weight: 300;
+}
 
+.product-quantity {
+  width: 350px;
+  display: flex;
+  flex-flow: row;
+
+}
+
+.minus-btn {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  height: 100%;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+}
+
+.quantity-input {
+  background-color: transparent;
+  border: none !important;
+}
+
+.quantity-icons {
+  font-size: 25px;
+}
+
+.quantity {
+  text-align:center ;
+
+}
 
 
 
