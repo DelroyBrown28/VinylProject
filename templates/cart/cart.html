@@ -68,16 +68,17 @@
             <div class="totals-wrap ">
                 <p class="subtotal-total-text">
                     Subtotal
-                    <span>£{{ order.get_subtotal }}</span>
+                    <span style="background-color: #4A4D4B; color: #F4FFF7">£{{ order.get_subtotal }}</span>
                 </p>
                 <p class="complete-total-text">
                     Complete Total
-                    <span>£{{ order.get_total }}</span>
+                    <span style="background-color: #4A4D4B; color: #F4FFF7">£{{ order.get_total }}</span>
                 </p>
             </div>
             <a href="{% url 'cart:product-list' %}" class="back-to-store-btn mt-4">Continue Browsing</a>
+            <a href="{% url 'cart:checkout' %}" class="back-to-store-btn mt-4">Checkout</a>
         </div>
-        
+
         {% endif %}
     </div>
 </div>

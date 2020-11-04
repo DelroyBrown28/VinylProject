@@ -25,10 +25,10 @@ class Address(models.Model):
     default = models.BooleanField(default=False)
     
     def __str__(self):
-        return f"{self.adress_line_1}, {self.adress_line_2},{self.city},"
+        return f"{self.address_line_1}, {self.address_line_2},{self.city},"
     
     class Meta:
-        verbose_name_plural = 'Adresses'
+        verbose_name_plural = 'Addresses'
     
 
 class FormatVariation(models.Model):
