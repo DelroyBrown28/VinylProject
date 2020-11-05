@@ -3,26 +3,15 @@
 
 {% block content %}
 
-<div class="bg-light py-3">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 mb-0">
-                <a href="{% url 'home' %}">Home</a>
-                <span class="mx-2 mb-0">/</span>
-                <strong class="text-black">Store</strong>
-            </div>
-        </div>
-    </div>
-</div>
-
-
 <div class="row mb-3 all-product-wrap">
     {% for product in object_list  %}
     <div class="col-lg-3 col-md-5 product-wrap" data-aos="fade-up">
 
+        <div class="lineDiv1" data-aos="fade-up" data-aos-delay="200"></div>
+
         <figure class="block-4-image">
             <a href="{{ product.get_absolute_url }}">
-                <img src="{{ product.image.url }}" alt="Album image" class="img-fluid product-image">
+                <img src="{{ product.image.url }}" alt="Album image" class="product-image">
             </a>
         </figure>
         <div class="block-4-text p-4">
@@ -30,7 +19,7 @@
                 <h3 class="artists-name">{{ product.artist_name }}</h3>
             </a>
             <p class="album-name">{{ product.album_title }}</p>
-            <p class="album-name">£{{ product.price }}</p>
+            <p class="album-name mt-4">£{{ product.price }}</p>
             
         </div>
     </div>

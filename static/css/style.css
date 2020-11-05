@@ -91,14 +91,14 @@ a:hover {
 }
 
 .page-icon-wrap {
-  margin: 0 !important;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .page-icon {
-  margin: 0;
+  text-align: center;
 }
 
 .page-content-title {
@@ -116,6 +116,8 @@ a:hover {
 
 .all-product-wrap {
   margin: 0;
+  display: flex;
+  flex-wrap: wrap;
   /* border: 1px solid #000; */
 }
 
@@ -124,9 +126,17 @@ a:hover {
   align-items: center;
   justify-content: center;
   flex-flow: column;
-  border-right: 1px solid rgba(0, 0, 0, 0.575);
-  border-left: 1px solid rgba(0, 0, 0, 0.575);
+  /* border-right: 1px solid rgba(0, 0, 0, 0.575); */
+  /* border-left: 1px solid rgba(0, 0, 0, 0.575); */
 
+}
+
+.lineDiv1 {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 1px;
+  background-color: #000;
 }
 
 
@@ -150,6 +160,7 @@ a:hover {
   height: 300px;
   animation-name: spin;
   animation-duration: 30s;
+  animation-delay: 2000ms;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
@@ -271,7 +282,7 @@ a:hover {
 }
 
 .product-detail-image {
-  height: 300px;
+  height: 400px;
 }
 
 .product-quantity {
@@ -614,7 +625,7 @@ a:hover {
 
 .cart-checkout-image {
   height: 200px;
-  width: 200px;
+  /* width: 200px; */
   animation-name: spin;
   animation-duration: 30s;
   animation-iteration-count: infinite;
