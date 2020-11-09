@@ -27,7 +27,7 @@
             </li>
 
             {% if request.user.is_staff %}
-            <li><a href="/">Staff</a></li>
+            <li><a style="color: #000;" href="{% url 'staff:staff' %}">Staff</a></li>
             {% endif %}
 
         </ul>

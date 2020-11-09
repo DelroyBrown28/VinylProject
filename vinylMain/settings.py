@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'coreLogic',
     'cart',
+    'staff',
     'crispy_forms',
     'django.contrib.sites',
     'allauth',
