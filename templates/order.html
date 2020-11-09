@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<div class="site-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <a href="{% url 'profile' %}">Back to profile</a>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Order: #{{ order.reference_number }}
+                        </h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Ordered on: {{ order.ordered_date }}</h6>
+                        <hr />
+                        <div class="site-blocks-table">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for item in order.items.all  %}
+                                    <tr>
+                                        <td><img src="{{ item.product.image_2.url }}" class="img-fluid" style="height: 100px; width: 100px;"
+                                                alt="alum image"><br>
+                                            {{ item.product.artist_name }}<br>
+                                            {{ item.product.album_title }}<br>
+                                            <span style="color: red;">{{ item.format.name }}</span><br>
+                                            {{ item.quantity }}x
+
+                                        <td>£{{ item.get_total_item_price }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                    <tr>
+                                        <td>Subtotal</td>
+                                        <td>£{{ order.get_subtotal }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total</td>
+                                        <td>£{{ order.get_total }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

@@ -9,9 +9,9 @@
             <li><a class="nav_item" href="{% url 'contact' %}">Contact</a></li>
             <li>
                 {% if request.user.is_authenticated %}
-                <a href="/"><span><i class="fas fa-user icons"></i></span></a>
+                <a href="{% url 'profile' %}"><span><i class="fas fa-user icons"></i></span></a>
                 {% else %}
-                <a href="/"><span><i class="fas fa-sign-in-alt icons"></i></span></a>
+                <a href="{% url 'account_login' %}"><span><i class="fas fa-sign-in-alt icons"></i></span></a>
                 {% endif %}
             </li>
             <li>

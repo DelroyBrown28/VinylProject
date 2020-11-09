@@ -6,18 +6,18 @@ from coreLogic import views
 from coreLogic.views import ContactView
 
 
-
-
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/', include('allauth.urls')),
     path('', views.HomeView.as_view(), name='home'),
     path('contact/', views.ContactView.as_view(), name='contact'),
     path('cart/', include('cart.urls', namespace='cart')),
+    path('profile/', views.ProfileView.as_view(), name='profile'),
 ]
 
 
 if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-    
-    
+    urlpatterns += static(settings.STATIC_URL,
+                          document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)
