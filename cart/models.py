@@ -5,8 +5,6 @@ from django.utils.text import slugify
 from django.shortcuts import reverse
 
 
-
-
 User = get_user_model()
 
 
@@ -37,7 +35,6 @@ class FormatVariation(models.Model):
     def __str__(self):
         return self.name
     
-
     
 class Product(models.Model):
     artist_name = models.CharField(max_length=150, null=False)
@@ -60,7 +57,6 @@ class Product(models.Model):
     def get_price(self):
 
         return "{:.2f}".format(self.price / 100)
-    
     
 
 class OrderItem(models.Model):

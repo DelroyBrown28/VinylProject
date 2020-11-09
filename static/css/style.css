@@ -701,6 +701,50 @@ a:hover {
 }
 
 
+/*
+  ============ 
+  PAYMENT PAGE
+  ============
+  */
+
+
+.btn-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paypal-btn-wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

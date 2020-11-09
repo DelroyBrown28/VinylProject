@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import FormatVariation, Order, OrderItem, Product, Address
+from .models import FormatVariation, Order, OrderItem, Product, Address, Payment
 
 
 class AddressAdmin(admin.ModelAdmin):
@@ -17,3 +17,4 @@ admin.site.register(Product)
 admin.site.register(OrderItem)
 admin.site.register(Order)
 admin.site.register(FormatVariation)
+admin.site.register(Payment)
