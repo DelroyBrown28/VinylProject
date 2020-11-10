@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "no_header_base.html" %}
 
 
 {% block content %}
@@ -8,9 +8,8 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <h2 class="text-black">Staff portal - Products</h2>
-                <div class="card">
+                <div class="card product-list-card">
                     <div class="card-body">
-
                         <div class="site-blocks-table">
                             <table class="table">
                                 <thead>
@@ -28,9 +27,9 @@
                                         <td>{{ product.artist_name }}</td>
                                         <td>{{ product.album_title }}</td>
                                         <td>£{{ product.get_price }}</td>
-                                        <td>
-                                            <a href="#">Update</a>
-                                            <a tabindex="0" class="btn btn-sm btn-primary" role="button"
+                                        <td class="actions-section">
+                                            <a class="product-update-btn mr-2" href="#">Update</a>
+                                            <a tabindex="0" class="product-delete-btn" role="button"
                                                 data-html="true" data-toggle="popover" data-trigger="focus"
                                                 title="Are You Sure?"
                                                 data-content="<a href='{{ product.get_delete_url }}'>Yes</a>">

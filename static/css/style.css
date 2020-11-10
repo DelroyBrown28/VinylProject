@@ -9,6 +9,12 @@ body {
 
 }
 
+.flexed {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* DELETE ME */
 .redborder {
   border: 1px solid red;
@@ -122,13 +128,19 @@ a:hover {
 }
 
 .product-wrap {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-flow: column;
-  /* border-right: 1px solid rgba(0, 0, 0, 0.575); */
-  /* border-left: 1px solid rgba(0, 0, 0, 0.575); */
+  z-index: 10;
 
+}
+
+
+
+.product-wrap>.product-cover:hover {
+  width: 100px;
 }
 
 .lineDiv1 {
@@ -158,6 +170,7 @@ a:hover {
 
 .product-image {
   height: 300px;
+  z-index: -1;
   animation-name: spin;
   animation-duration: 30s;
   animation-delay: 2000ms;
@@ -722,30 +735,181 @@ a:hover {
 
 }
 
+/*
+    =================== 
+    STAFF: PRODUCT LIST
+    ===================
+    */
+
+.product-update-btn {
+  padding: 3px 20px;
+  border: 1px solid #000;
+}
+
+.product-delete-btn {
+  padding: 3px 20px;
+  background-color: red;
+  color: #fff;
+  cursor: pointer;
 
 
+}
+
+.actions-section {
+  width: 100%;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.destroy-btn {
+  background-color: transparent;
+  color: red;
+  width: 200px;
+  height: 50px;
+  border: 1px solid #000;
+  cursor: pointer;
+}
+
+/*
+=================== 
+STAFF: RECENT ORDERS
+===================
+*/
+
+.recent-orders-card,
+.product-list-card,
+.profile-orders-card {
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+  border-radius: 0px !important;
+  background: #F4FFF7;
+  box-shadow: 5px 5px 30px #b9c2bc,
+    -5px -5px 30px #ffffff;
+}
+
+.current-user-email {
+  color: #000;
+  font-weight: 600;
+  font-size: 15px;
+  text-align: right;
+}
+
+.inventory-btn {
+  padding: 3px 20px;
+  font-weight: 300;
+  background-color: rgb(34, 34, 34);
+  color: #fff;
+  opacity: 0.7;
+}
+
+.inventory-btn:hover {
+  color: #fff;
+  opacity: 1;
+}
+
+.customer-orders-text {
+  color: #000;
+  font-weight: 300;
+}
 
 
+/*
+================ 
+CUSTOMER PROFILE
+================
+*/
+
+.logout-btn {
+  padding: 3px 20px;
+  background-color: #000;
+  color: #fff;
+  opacity: 0.7;
+
+}
+
+.logout-btn:hover {
+  color: #fff;
+  opacity: 1;
+}
 
 
+/*
+============ 
+CONTACT PAGE
+============
+*/
+
+.submit-message-btn {
+  width: 100%;
+  height: 50px;
+  background-color: transparent;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Roboto Condensed', sans-serif;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: 0.2s;
+
+}
+
+.submit-message-btn:hover {
+  opacity: 1;
+}
+
+#id_message {
+  resize: none;
+  background-color: transparent;
+}
 
 
+/*
+============= 
+SIGN OUT PAGE
+=============
+*/
 
+.signout-text {
+  color: #000;
+  font-weight: 500;
+  font-size: 5rem;
+}
 
+.are-you-sure-text {
+  color: #000;
+  font-size: 2rem;
+  font-weight: 300;
+}
 
+.sad-face-img-signout-1,
+.sad-face-img-signout-2 {
+  height: 2rem;
+}
 
+.sad-face-img-signout-1 {
+  animation-name: sadSpinnersAntiClockwise;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 
+}
+.sad-face-img-signout-2 {
+  animation-name: sadSpinnersClockwise;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 
+}
 
-
-
-
-
-
-
-
-
-
+.signout-btn {
+  background-color: transparent;
+  min-width: 200px;
+  border: 1px solid #000;
+  color: #000;
+  cursor: pointer;
+}
 
 
 

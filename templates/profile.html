@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "no_header_base.html" %}
 
 
 {% block content %}
@@ -8,11 +8,11 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <h2 class="text-black">Profile</h2>
-                <div class="card">
+                <div class="card profile-orders-card">
                     <div class="card-body">
-                        <h5 class="card-title">{{ request.user.email }}
-                            <a href="{% url 'account_logout' %}"><small class="float-right">Logout</small></a>
+                        <h5 class="current-user-email">{{ request.user.email }}
                         </h5>
+                        <a class="logout-btn float-right" href="{% url 'account_logout' %}"><small>Logout</small></a>
                         <hr />
                         <h5 class="card-title">Your orders</h5>
                         <div class="site-blocks-table">

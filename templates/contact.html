@@ -1,20 +1,8 @@
-{% extends 'base.html' %}
+{% extends 'no_header_base.html' %}
 {% load crispy_forms_tags %}
 
 
 {% block content %}
-
-<div class="bg-light py-3">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 mb-0">
-                <a href="{% url 'home' %}">Home</a>
-                <span class="mx-2 mb-0">/</span>
-                <strong class="text-black">Contact</strong>
-            </div>
-        </div>
-    </div>
-</div>
 
 
 <div class="site-section">
@@ -27,7 +15,7 @@
                 <form method="POST">
                     {% csrf_token %}
                     {{form|crispy}}
-                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Submit Message">
+                    <input type="submit" class="submit-message-btn" value="Submit Message">
                 </form>
             </div>
         </div>

@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "no_header_base.html" %}
 
 
 {% block content %}
@@ -8,14 +8,16 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <h2 class="text-black">Staff portal</h2>
-                <div class="card">
+                <div class="card recent-orders-card">
                     <div class="card-body">
-                        <h5 class="card-title">{{ request.user.email }}
+                        <h5 class="current-user-email">{{ request.user.email }}
                         </h5>
                         <hr />
-                        <a href="{% url 'staff:product-list' %}">Products</a>
+                        <a class="inventory-btn flexed" href="{% url 'staff:product-list' %}">
+                            View Inventory
+                        </a>
                         <hr />
-                        <h5 class="card-title">Recent orders</h5>
+                        <h5 class="customer-orders-text">Recent Customer Orders</h5>
                         <div class="site-blocks-table">
                             <table class="table">
                                 <thead>
