@@ -54,6 +54,9 @@ class Product(models.Model):
     def get_absolute_url(self):
         return reverse("cart:product-detail", kwargs={"slug": self.slug})
     
+    def get_update_url(self):
+        return reverse("staff:product-update", kwargs={"pk": self.pk})
+    
     def get_delete_url(self):
         return reverse("staff:product-delete", kwargs={"pk": self.pk})
         
@@ -149,7 +152,7 @@ class Payment(models.Model):
     
 def pre_save_product_receiver(sender, instance, *args, **kwargs):
     if not instance.slug:
-        instance.slug = slugify(instance.title)
+        instance.slug = slugify(instance.album_title)
    
 pre_save.connect(pre_save_product_receiver, sender=Product)     
         

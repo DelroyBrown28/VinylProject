@@ -1,0 +1,21 @@
+{% extends "no_header_base.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+<div class="site-section">
+    <div class="container">
+            <div class="col-md-12">
+                <a href="{% url 'staff:product-list' %}">Back to Staff Portal</a>
+                <hr >
+                <h4>Update Product</h4>
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button type="submit" class="destroy-btn">Update</button>
+                </form>
+            </div>
+    </div>
+
+    {% endblock content %}
