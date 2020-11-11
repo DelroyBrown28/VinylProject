@@ -60,7 +60,7 @@ class Product(models.Model):
     primary_category = models.ForeignKey(Category,
                                         related_name='primary_products',
                                         on_delete=models.CASCADE)
-    seconday_category = models.ManyToManyField(Category, blank=True)
+    secondary_category = models.ManyToManyField(Category, blank=True)
     
     def __str__(self):
         return self.artist_name

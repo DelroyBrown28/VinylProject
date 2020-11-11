@@ -120,6 +120,41 @@ a:hover {
   color: #000 !important;
 }
 
+/*
+    ================= 
+    PRODUCT LIST PAGE
+    =================
+    */
+
+
+.genres-title {
+  font-size: 1rem;
+  color: #000;
+  min-width: 100px;
+  min-height: 35px;
+  font-weight: 600;
+  background-color: rgb(46, 46, 46);
+  color: #fff;
+  cursor: pointer;
+}
+
+.category-list-item {
+  font-weight: 300;
+  color: #000;
+}
+
+.categories-wrap {
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+}
+
+.categories-list {
+  
+  justify-content: space-evenly;
+}
+
+
 .all-product-wrap {
   margin: 0;
   display: flex;
@@ -136,8 +171,6 @@ a:hover {
   z-index: 10;
 
 }
-
-
 
 .product-wrap>.product-cover:hover {
   width: 100px;
@@ -190,9 +223,9 @@ a:hover {
 
 
 /*
-  =============== 
+  =================== 
   PRODUCT DETAIL PAGE
-  ===============
+  ===================
   */
 
 .product-detail-body {
@@ -895,6 +928,7 @@ SIGN OUT PAGE
   animation-timing-function: linear;
 
 }
+
 .sad-face-img-signout-2 {
   animation-name: sadSpinnersClockwise;
   animation-duration: 15s;
