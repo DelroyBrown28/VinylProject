@@ -9,7 +9,7 @@ from .forms import ProductForm
 
 class StaffView(LoginRequiredMixin, StaffUserMixin, generic.ListView):
     template_name = 'staff/staff.html'
-    queryset = Order.objects.filter(ordered=True).order_by('-ordered_date')
+    queryset = Order.objects.filter(ordered = True).order_by('-ordered_date')
     paginate_by = 20
     context_object_name = 'orders'
 
@@ -40,6 +40,7 @@ class ProductUpdateView(LoginRequiredMixin, StaffUserMixin, generic.UpdateView):
 
     def get_success_url(self):
         return reverse("staff:product-list")
+
 
     def form_valid(self, form):
         form.save()
