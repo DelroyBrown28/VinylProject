@@ -10,25 +10,23 @@ from django.views import generic
 from .forms import AddToCartForm, AddressForm
 from .utils import get_or_set_order_session
 from .models import (Product,
-                    OrderItem,
-                    Address,
-                    Payment,
-                    Order,
-                    Category)
-
+                     OrderItem,
+                     Address,
+                     Payment,
+                     Order,
+                     Category)
 
 
 class ProductListView(generic.ListView):
     template_name = 'cart/product_list.html'
-    
+
     def get_queryset(self):
-        qs =Product.objects.all()
+        qs = Product.objects.all()
         category = self.request.GET.get('category', None)
         if category:
-            qs = qs.filter(Q(primary_category__name=category) | 
-                            Q(secondary_category__name=category)).distinct()
+            qs = qs.filter(Q(primary_category__name=category) |
+                           Q(secondary_category__name=category)).distinct()
         return qs
-    
 
     def get_context_data(self, **kwargs):
         context = super(ProductListView, self).get_context_data(**kwargs)
@@ -36,7 +34,6 @@ class ProductListView(generic.ListView):
             "categories": Category.objects.values("name")
         })
         return context
-    
 
 
 class ProductDetailView(generic.FormView):
@@ -76,7 +73,6 @@ class ProductDetailView(generic.FormView):
 
         return super(ProductDetailView, self).form_valid(form)
 
-
     def get_context_data(self, **kwargs):
         context = super(ProductDetailView, self).get_context_data(**kwargs)
         context['product'] = self.get_object()
@@ -88,7 +84,7 @@ class CartView(generic.TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(CartView, self).get_context_data(**kwargs)
-        context["order"] = get_or_set_order_session(self.request) 
+        context["order"] = get_or_set_order_session(self.request)
         return context
 
 
@@ -98,27 +94,27 @@ class IncreaseQuantityView(generic.View):
         order_item.quantity += 1
         order_item.save()
         return redirect('cart:summary')
-    
-    
+
+
 class DecreaseQuantityView(generic.View):
     def get(self, request, *args, **kwargs):
         order_item = get_object_or_404(OrderItem, id=kwargs['pk'])
-        
+
         if order_item.quantity <= 1:
             order_item.delete()
         else:
             order_item.quantity -= 1
             order_item.save()
         return redirect('cart:summary')
-    
-    
+
+
 class RemoveFromCartView(generic.View):
     def get(self, request, *args, **kwargs):
         order_item = get_object_or_404(OrderItem, id=kwargs['pk'])
         order_item.delete()
         return redirect('cart:summary')
-    
-    
+
+
 class CheckoutView(generic.FormView):
     template_name = 'cart/checkout.html'
     form_class = AddressForm
@@ -128,8 +124,10 @@ class CheckoutView(generic.FormView):
 
     def form_valid(self, form):
         order = get_or_set_order_session(self.request)
-        selected_shipping_address = form.cleaned_data.get('selected_shipping_address')
-        selected_billing_address = form.cleaned_data.get('selected_billing_address')
+        selected_shipping_address = form.cleaned_data.get(
+            'selected_shipping_address')
+        selected_billing_address = form.cleaned_data.get(
+            'selected_billing_address')
 
         if selected_shipping_address:
             order.shipping_address = selected_shipping_address
@@ -167,10 +165,10 @@ class CheckoutView(generic.FormView):
 
     def get_context_data(self, **kwargs):
         context = super(CheckoutView, self).get_context_data(**kwargs)
-        context["order"] = get_or_set_order_session(self.request) 
+        context["order"] = get_or_set_order_session(self.request)
         return context
-    
-    
+
+
 class PaymentView(generic.TemplateView):
     template_name = 'cart/payment.html'
 
@@ -198,7 +196,7 @@ class ConfirmOrderView(generic.View):
         order.ordered = True
         order.ordered_date = datetime.date.today()
         order.save()
-        return JsonResponse({'data' : 'success'})
+        return JsonResponse({'data': 'success'})
 
 
 class ThankYouView(generic.TemplateView):
@@ -209,4 +207,3 @@ class OrderDetailView(LoginRequiredMixin, generic.DetailView):
     template_name = 'order.html'
     queryset = Order.objects.all()
     context_object_name = 'order'
-

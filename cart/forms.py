@@ -85,5 +85,3 @@ class AddressForm(forms.Form):
             if not data.get('billing_city', None):
                 self.add_error("shipping_city", "Please fill in this field")
 
-
-
