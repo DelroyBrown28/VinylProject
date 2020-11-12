@@ -32,22 +32,17 @@ class ContactView(generic.FormView):
         return reverse("contact")
 
     def form_valid(self, form):
-        messages.info(
-            self.request, "Thanks for getting in touch, we'll get back to you ASAP!")
         name = form.cleaned_data.get('name')
         email = form.cleaned_data.get('email')
         message = form.cleaned_data.get('message')
-
-        full_message = f"""
-            Received message below from {name}, {email}
-            ____________________________________________
-            
-            {message}
-            """
+        
+    
         send_mail(
-            subject="Received contact form submission",
-            message=full_message,
-            from_email=settings.DEFAULT_FROM_EMAIL,
-            recipient_list=[settings.NOTIFY_EMAIL]
+            name,
+            message,
+            email,
+            ['delroybrown229@gmail.com'],
         )
+        messages.info(
+            self.request, "Thanks for getting in touch %(name), we'll get back to you ASAP!")
         return super(ContactView, self).form_valid(form)

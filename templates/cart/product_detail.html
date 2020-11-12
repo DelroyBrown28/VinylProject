@@ -8,6 +8,7 @@
     <div class="row product-container">
 
         <div class="col-md-6 product-image-box" data-aos="fade">
+            <a href="{% url 'cart:summary' %}" class="flexed back-arrow">⟵</a>
             <img src="{{ product.image_2.url }}" class="img-fluid product-detail-image">
             <form method="POST" class="product-quantity">
 

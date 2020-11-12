@@ -1,5 +1,6 @@
 import os
 import environ
+import smtplib
 from pathlib import Path
 
 
@@ -11,14 +12,19 @@ environ.Env.read_env()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-
 SECRET_KEY = env('SECRET_KEY')
 DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = ['*']
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_POST = 587
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = env('DEFAULT_FROM_EMAIL')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+DEFAULT_FORM_EMAIL = env('DEFAULT_FROM_EMAIL')
+NOTIFY_EMAIL = env('NOTIFY_EMAIL')
 
 
 INSTALLED_APPS = [
@@ -38,8 +44,6 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
 ]
 
-DEFAULT_FORM_EMAIL = env('DEFAULT_FROM_EMAIL')
-NOTIFY_EMAIL = env('NOTIFY_EMAIL')
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -72,14 +76,12 @@ TEMPLATES = [
 WSGI_APPLICATION = 'vinylMain.wsgi.application'
 
 
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -101,13 +103,12 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 )
-ACCOUNT_AUTHENTICATION_METHOD='email'
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 LOGIN_REDIRECT_URL = '/'
 SITE_ID = 1
-
 
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -117,7 +118,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
-
 
 
 STATIC_URL = '/static/'
@@ -138,19 +138,18 @@ if DEBUG is False:
     SECURE_REDIRECT_EXEMPT = []
     SECURE_SSL_REDIRECT = True
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-    
+
     ALLOWED_HOSTS = []
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    
-    
+
     DATABASES = {
         'default': {
-            'ENGINE' : 'django.db.backends.postgresql_psycopg2',
-            'NAME' : '',
-            'USER' : '',
-            'PASSWORD' : '',
-            'HOST' : '',
-            'POST' : '',
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': '',
+            'USER': '',
+            'PASSWORD': '',
+            'HOST': '',
+            'POST': '',
         }
     }
 

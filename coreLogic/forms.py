@@ -9,7 +9,7 @@ class ContactForm(forms.Form):
     email = forms.EmailField(widget=forms.TextInput(attrs={
         'placeholder': "Your Email Address"
     }))
-    
+
     message = forms.CharField(widget=forms.Textarea(attrs={
-        'placeholder' : "Send us a message. . ."
+        'placeholder': "Send us a message. . ."
     }))
