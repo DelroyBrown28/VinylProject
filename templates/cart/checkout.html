@@ -37,7 +37,7 @@
 
 {% else %}
 
-<form method="POST">
+<form method="POST" class="mt-5">
     {% csrf_token %}
     <div class="col-md-12 p-0 address-form-wrap ">
         <div class="col-md-6 ">
@@ -46,7 +46,7 @@
             <div>
                 {{ form|crispy }}
             </div>
-            <button class="payment-btn">Proced To Payment</button>
+            <button class="payment-btn">Proceed To Payment</button>
         </div>
 
         <div class="col-md-6 p-0 paying-side-wrap">

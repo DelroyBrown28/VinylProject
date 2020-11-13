@@ -9,8 +9,10 @@
         <ul class="categories-list flexed">
             <h3 class="genres-title m-0 flexed">Genres ⟶</h3>
             {% for category in categories  %}
-            <li class="category-list-item">
+            <li class="category-list-item flexed">
                 <a href="?category={{ category.name }}" class="d-flex">
+                 
+
                     <span>{{ category.name }}</span>
                 </a>
             </li>

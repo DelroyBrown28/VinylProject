@@ -10,6 +10,7 @@ User = get_user_model()
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
+    
 
     class Meta:
         verbose_name_plural = "Categories"

@@ -8,25 +8,29 @@
 
         <h1 class="main-store-title flexed">V I N Y L
             <div class="button-bar flexed">
-                <a href="{% url 'cart:product-list' %}" class="tooltipped flexed btn-bar-btns" data-tooltip="Store">
+                <a href="{% url 'cart:product-list' %}" class="tooltipped flexed btn-bar-btns" data-position="top"
+                    data-tooltip="S T O R E">
                     <span style="font-size: 25px;" class="material-icons">album</span>
                 </a>
-                <a href="{% url 'contact' %}" class="tooltipped flexed btn-bar-btns" data-tooltip="Contact">
+                <a href="{% url 'contact' %}" class="tooltipped flexed btn-bar-btns" data-position="top"
+                    data-tooltip="C O N T A C T">
                     <span style="font-size: 25px;" class="material-icons">perm_phone_msg</span>
                 </a>
 
                 {% if request.user.is_authenticated %}
-                <a href="#" class="tooltipped flexed btn-bar-btns" data-tooltip="Account">
+                <a href="{% url 'profile' %}" class="tooltipped flexed btn-bar-btns" data-position="top" data-tooltip="A C C O U N T">
                     <span style="font-size: 25px;" class="material-icons">account_box</span>
                 </a>
                 {% else %}
-                <a href="{% url 'account_login' %}" class="tooltipped flexed btn-bar-btns" data-tooltip="Sign in">
+                <a href="{% url 'account_login' %}" class="tooltipped flexed btn-bar-btns" data-position="top"
+                    data-tooltip="Sign in">
                     <span style="font-size: 25px;" class="material-icons">login</span>
                 </a>
                 {% endif %}
 
                 {% if request.user.is_staff %}
-                <a href="{% url 'staff:staff' %}" class="tooltipped flexed btn-bar-btns" data-tooltip="Staff">
+                <a href="{% url 'staff:staff' %}" class="tooltipped flexed btn-bar-btns" data-position="top"
+                    data-tooltip="S T A F F">
                     <span style="font-size: 25px;" class="material-icons">priority_high</span>
                 </a>
                 {% endif %}
