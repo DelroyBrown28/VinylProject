@@ -3,42 +3,45 @@
 
 {% block content %}
 
-<div class="col-md-12 mb-4 p-0 categories-wrap">
+<body class="product-list-body">
+    <div class="col-md-12 mb-4 p-0 categories-wrap">
 
-    <ul class="categories-list flexed">
-        <h3 class="genres-title m-0 flexed">Genres ⟶</h3>
-        {% for category in categories  %}
-        <li class="category-list-item">
-            <a href="?category={{ category.name }}" class="d-flex">
-                <span>{{ category.name }}</span>
-            </a>
-        </li>
-        {% endfor %}
-    </ul>
-</div>
-<hr />
-<div class="row mb-3 all-product-wrap">
-    {% for product in object_list  %}
-    <div class="col-lg-3 col-md-5 product-wrap" data-aos="fade-up">
-
-        <div class="lineDiv1" data-aos="fade-up" data-aos-delay="200"></div>
-
-        <figure class="block-4-image">
-            <a href="{{ product.get_absolute_url }}">
-                <img src="{{ product.image.url }}" alt="Album image" class="product-image">
-            </a>
-        </figure>
-        <div class="block-4-text p-4">
-            <a href="{{ product.get_absolute_url }}">
-                <h3 class="artists-name">{{ product.artist_name }}</h3>
-            </a>
-            <p class="album-name">{{ product.album_title }}</p>
-            <p class="album-name mt-4">£{{ product.price }}</p>
-
-        </div>
+        <ul class="categories-list flexed">
+            <h3 class="genres-title m-0 flexed">Genres ⟶</h3>
+            {% for category in categories  %}
+            <li class="category-list-item">
+                <a href="?category={{ category.name }}" class="d-flex">
+                    <span>{{ category.name }}</span>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
     </div>
-    {% endfor %}
-</div>
+    <hr />
+    <div class="row mb-3 all-product-wrap">
+        {% for product in object_list  %}
+        <div class="col-lg-3 col-md-5 product-wrap" data-aos="fade-up">
+
+            <div class="lineDiv1" data-aos="fade-up" data-aos-delay="200"></div>
+
+            <figure class="block-4-image">
+                <a href="{{ product.get_absolute_url }}">
+                    <img src="{{ product.image.url }}" alt="Album image" class="product-image">
+                </a>
+            </figure>
+            <div class="block-4-text p-4">
+                <a href="{{ product.get_absolute_url }}">
+                    <h3 class="artists-name">{{ product.artist_name }}</h3>
+                </a>
+                <p class="album-name">{{ product.album_title }}</p>
+                <p class="album-name mt-4">£{{ product.price }}</p>
+
+            </div>
+            <div class="lineDiv2" data-aos="fade-up" data-aos-delay="200"></div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
 
 
 

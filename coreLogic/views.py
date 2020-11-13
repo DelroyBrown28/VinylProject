@@ -5,7 +5,6 @@ from django.contrib import messages
 from django.shortcuts import render, reverse
 from django.views import generic
 from cart.models import Order
-# from coreLogic.views import ContactView
 from .forms import ContactForm
 
 
@@ -35,14 +34,13 @@ class ContactView(generic.FormView):
         name = form.cleaned_data.get('name')
         email = form.cleaned_data.get('email')
         message = form.cleaned_data.get('message')
-        
-    
+
         send_mail(
             name,
             message,
             email,
-            ['delroybrown229@gmail.com'],
+            ['lymara_52@hotmail.com', 'delroy_jb@hotmail.co.uk'],
         )
         messages.info(
-            self.request, "Thanks for getting in touch %(name), we'll get back to you ASAP!")
+            self.request, "Thanks for getting in touch, we'll get back to you ASAP!")
         return super(ContactView, self).form_valid(form)

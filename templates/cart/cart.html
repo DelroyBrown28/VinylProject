@@ -4,84 +4,88 @@
 {% block content %}
 {% include 'navbar.html' %}
 
-<div style="width: 100%;" class="row">
-    <div class="cart-product-detail-wrap col-md-6" data-aos="fade">
-        {% for item in order.items.all  %}
-        <div class="product-detail-box col-md-12">
+<body class="cart-body">
+    <div style="width: 100%;" class="row">
+        <div class="cart-product-detail-wrap col-md-6" data-aos="fade">
+            {% for item in order.items.all  %}
+            <div class="product-detail-box col-md-12">
 
-            <a href="{% url 'cart:remove-from-cart' item.id %}" class="mb-4" style="text-align: center;">
-                <i class="material-icons">delete_forever</i>
-                <br>
-                Remove
-            </a>
+                <a href="{% url 'cart:remove-from-cart' item.id %}" class="mb-4" style="text-align: center;">
+                    <i class="material-icons">delete_forever</i>
+                    <br>
+                    Remove
+                </a>
 
-            <img src="{{ item.product.image_2.url }}" class="img-fluid cart-product-image" alt="Record Image">
-            <div class="cart-product-albumtitle-wrap">
-                <div class="row product-info-wrap">
-                    <p class="artist-name">{{ item.product.artist_name }}</p>
-                    <p class="album-title">{{ item.product.album_title }}</p>
-                    <p class="main-item-price">£{{ item.product.get_price }}</p>
-                    <p class="album-title" style="color: red;">{{ item.format.name }}</p>
-                </div>
-
-                <span class="row justify-content-center mb-0">
-                    <small class="quantity">Quantity</small>
-                </span>
-                <div class="input-group product-quantity mb-3">
-                    <div class="input-group-prepend">
-                        <a href="{% url 'cart:decrease-quantity' item.id %}" class="minus-btn btn btn-outline-primary">
-                            <i class="material-icons quantity-icons">arrow_drop_down</i>
-                        </a>
+                <img src="{{ item.product.image_2.url }}" class="img-fluid cart-product-image" alt="Record Image">
+                <div class="cart-product-albumtitle-wrap">
+                    <div class="row product-info-wrap">
+                        <p class="artist-name">{{ item.product.artist_name }}</p>
+                        <p class="album-title">{{ item.product.album_title }}</p>
+                        <p class="main-item-price">£{{ item.product.get_price }}</p>
+                        <p class="album-title" style="color: red;">{{ item.format.name }}</p>
                     </div>
-                    <input type="text" class="form-control quantity-input text-center" value="{{ item.quantity }}">
-                    <div class="input-group-append">
-                        <a href="{% url 'cart:increase-quantity' item.id %}" class="minus-btn btn btn-outline-primary">
-                            <i class="material-icons quantity-icons">arrow_drop_up</i>
-                        </a>
+
+                    <span class="row justify-content-center mb-0">
+                        <small class="quantity">Quantity</small>
+                    </span>
+                    <div class="input-group product-quantity mb-3">
+                        <div class="input-group-prepend">
+                            <a href="{% url 'cart:decrease-quantity' item.id %}"
+                                class="minus-btn btn btn-outline-primary">
+                                <i class="material-icons quantity-icons">arrow_drop_down</i>
+                            </a>
+                        </div>
+                        <input type="text" class="form-control quantity-input text-center" value="{{ item.quantity }}">
+                        <div class="input-group-append">
+                            <a href="{% url 'cart:increase-quantity' item.id %}"
+                                class="minus-btn btn btn-outline-primary">
+                                <i class="material-icons quantity-icons">arrow_drop_up</i>
+                            </a>
+                        </div>
                     </div>
+                    <p class="item-price">Product Total: <strong>£{{ item.get_total_item_price }}</strong></p>
                 </div>
-                <p class="item-price">Product Total: <strong>£{{ item.get_total_item_price }}</strong></p>
             </div>
-        </div>
-        {% empty %}
+            {% empty %}
 
-        <div class="empty-cart">
-            <p class="empty-cart-text">Your cart is empty.</p>
-            <div class="sad-face-wrap">
-                <img src="{% static '/images/sad.png' %}" alt="sad face" class="sad1 sad-face-img">
-                <img src="{% static '/images/saddark.png' %}" alt="sad face" class="sad2 sad-face-img">
-                <img src="{% static '/images/sad.png' %}" alt="sad face" class="sad1 sad-face-img">
-                <img src="{% static '/images/saddark.png' %}" alt="sad face" class="sad2 sad-face-img">
-                <img src="{% static '/images/sad.png' %}" alt="sad face" class="sad1 sad-face-img">
-                <img src="{% static '/images/saddark.png' %}" alt="sad face" class="sad2 sad-face-img">
+            <div class="empty-cart">
+                <p class="empty-cart-text">Your cart is empty.</p>
+                <div class="sad-face-wrap">
+                    <img src="{% static '/images/sad.png' %}" alt="sad face" class="sad1 sad-face-img">
+                    <img src="{% static '/images/saddark.png' %}" alt="sad face" class="sad2 sad-face-img">
+                    <img src="{% static '/images/sad.png' %}" alt="sad face" class="sad1 sad-face-img">
+                    <img src="{% static '/images/saddark.png' %}" alt="sad face" class="sad2 sad-face-img">
+                    <img src="{% static '/images/sad.png' %}" alt="sad face" class="sad1 sad-face-img">
+                    <img src="{% static '/images/saddark.png' %}" alt="sad face" class="sad2 sad-face-img">
+                </div>
+                <a href="{% url 'cart:product-list' %}" class="mt-4 visit-store-text">Visit the store</a>
             </div>
-            <a href="{% url 'cart:product-list' %}" class="mt-4 visit-store-text">Visit the store</a>
+
+
+            {% endfor %}
         </div>
+        <div style="padding: 0;" class="col-md-6 cart-product-checkout-wrap" data-aos="fade">
+            {% if order.items.count > 0 %}
+            <div class="col-md-12 cart-product-checkout ">
+                <h3 class="grand-total-text mb-4">C A R T<span style="visibility: hidden;">...</span>T O T A L</h3>
+                <div class="totals-wrap ">
+                    <p class="subtotal-total-text">
+                        Subtotal
+                        <span>£{{ order.get_subtotal }}</span>
+                    </p>
+                    <p class="complete-total-text">
+                        Complete Total
+                        <span>£{{ order.get_total }}</span>
+                    </p>
+                </div>
+                <a href="{% url 'cart:product-list' %}" class="back-to-store-btn mt-4">Continue Browsing</a>
+                <a href="{% url 'cart:checkout' %}" class="back-to-store-btn mt-4">Checkout</a>
+            </div>
 
-
-        {% endfor %}
+            {% endif %}
+        </div>
     </div>
-    <div style="padding: 0;" class="col-md-6 cart-product-checkout-wrap" data-aos="fade">
-        {% if order.items.count > 0 %}
-        <div class="col-md-12 cart-product-checkout ">
-            <h3 class="grand-total-text mb-4">C A R T<span style="visibility: hidden;">...</span>T O T A L</h3>
-            <div class="totals-wrap ">
-                <p class="subtotal-total-text">
-                    Subtotal
-                    <span style="background-color: #4A4D4B; color: #F4FFF7">£{{ order.get_subtotal }}</span>
-                </p>
-                <p class="complete-total-text">
-                    Complete Total
-                    <span style="background-color: #4A4D4B; color: #F4FFF7">£{{ order.get_total }}</span>
-                </p>
-            </div>
-            <a href="{% url 'cart:product-list' %}" class="back-to-store-btn mt-4">Continue Browsing</a>
-            <a href="{% url 'cart:checkout' %}" class="back-to-store-btn mt-4">Checkout</a>
-        </div>
-
-        {% endif %}
-    </div>
-</div>
+</body>
 
 
 {% endblock content %}
