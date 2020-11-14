@@ -1,5 +1,7 @@
-import django_heroku
 import os
+import psycopg2
+import django_heroku
+import dj_database_url
 import environ
 import smtplib
 from pathlib import Path
@@ -146,11 +148,6 @@ if DEBUG is False:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': '',
-            'USER': '',
-            'PASSWORD': '',
-            'HOST': '',
-            'POST': '',
         }
     }
 
