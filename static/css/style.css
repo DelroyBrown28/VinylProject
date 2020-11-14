@@ -10,8 +10,14 @@ body {
 }
 
 .flexed {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -76,12 +82,17 @@ a:hover {
   text-align: center !important;
   font-weight: 300 !important;
   font-size: 15rem !important;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column;
   flex-flow: column;
 }
 
 .button-bar {
   width: 100%;
   height: 50px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 
 }
@@ -90,8 +101,13 @@ a:hover {
   position: relative;
   width: 170px;
   height: 35px;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
   font-size: 1.3rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column;
   flex-flow: column;
 
 
@@ -108,8 +124,14 @@ a:hover {
   height: 300px;
   font-size: 10rem;
   font-weight: 300;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 
 }
@@ -121,9 +143,14 @@ a:hover {
   }
 
   .button-bar {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: column;
     flex-flow: column;
     width: 100%;
     height: 200px;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
 
   }
@@ -146,6 +173,7 @@ a:hover {
 .main-nav {
   padding: 0px;
   background-color: transparent;
+  -webkit-box-shadow: none;
   box-shadow: none;
 }
 
@@ -177,8 +205,14 @@ a:hover {
 
 .page-icon-wrap {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -187,8 +221,14 @@ a:hover {
 }
 
 .page-content-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -219,35 +259,60 @@ a:hover {
 .category-list-item {
   font-weight: 300;
   color: #000;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
 
 }
 
 .categories-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column;
   flex-flow: column;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 
 .categories-list {
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
   justify-content: space-evenly;
 }
 
 
 .all-product-wrap {
   margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
   justify-content: space-evenly;
   /* border: 1px solid #000; */
 }
 
 .product-wrap {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column;
   flex-flow: column;
   z-index: 10;
 
@@ -288,11 +353,15 @@ a:hover {
   color: #000;
 
   margin: 0;
+  -webkit-transform: translateY(-65px);
+  -ms-transform: translateY(-65px);
   transform: translateY(-65px);
 }
 
 .album-name {
   margin: 0;
+  -webkit-transform: translateY(-65px);
+  -ms-transform: translateY(-65px);
   transform: translateY(-65px);
   text-align: center;
 }
@@ -301,19 +370,38 @@ a:hover {
 .product-image {
   height: 300px;
   z-index: -1;
+  -webkit-animation-name: spin;
   animation-name: spin;
+  -webkit-animation-duration: 30s;
   animation-duration: 30s;
+  -webkit-animation-delay: 2000ms;
   animation-delay: 2000ms;
+  -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
 }
 
-@keyframes spin {
+@-webkit-keyframes spin {
   from {
+    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
 
   to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
@@ -343,10 +431,13 @@ a:hover {
 }
 
 .product-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin: 0;
   width: 100%;
   height: 800px;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 
 }
@@ -354,9 +445,18 @@ a:hover {
 .product-image-box,
 .product-detail-box {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column;
   flex-flow: column;
   border-bottom: 1px solid #F4FFF7;
   border-top: 1px solid #F4FFF7;
@@ -367,8 +467,15 @@ a:hover {
 
 
 .product-details-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column;
   flex-flow: column;
 
   text-align: center;
@@ -416,6 +523,8 @@ a:hover {
   font-weight: 300;
   font-family: 'Roboto Condensed', sans-serif;
   cursor: pointer;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
 
 }
@@ -485,6 +594,9 @@ a:hover {
   }
 
   .button-row {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row;
     flex-flow: row;
   }
 }
@@ -588,6 +700,9 @@ a:hover {
 @media (max-width: 458px) {
   .grand-total-text {
     font-size: 2rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: column;
     flex-flow: column;
   }
 
@@ -604,9 +719,18 @@ a:hover {
 }
 
 .product-info-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column;
   flex-flow: column;
 
 }
@@ -624,7 +748,12 @@ a:hover {
 
 .product-quantity {
   width: 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row;
   flex-flow: row;
 
 }
@@ -632,11 +761,18 @@ a:hover {
 .minus-btn {
   background-color: transparent;
   border: none;
+  -webkit-box-shadow: none;
   box-shadow: none;
   height: 100%;
   width: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   color: #000;
 }
@@ -674,9 +810,18 @@ a:hover {
 
 .empty-cart {
   height: 800px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column;
   flex-flow: column;
 
 }
@@ -687,7 +832,11 @@ a:hover {
 
 .sad-face-wrap {
   min-width: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 
 }
@@ -706,8 +855,14 @@ a:hover {
   color: #F4FFF7;
   font-weight: 300;
   opacity: 0.7;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   min-width: 250px;
   font-size: 1.3rem;
@@ -720,37 +875,73 @@ a:hover {
 }
 
 .sad1 {
+  -webkit-animation-name: sadSpinnersClockwise;
   animation-name: sadSpinnersClockwise;
+  -webkit-animation-duration: 15s;
   animation-duration: 15s;
+  -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
 
 }
 
 .sad2 {
+  -webkit-animation-name: sadSpinnersAntiClockwise;
   animation-name: sadSpinnersAntiClockwise;
+  -webkit-animation-duration: 15s;
   animation-duration: 15s;
+  -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
 
 }
 
-@keyframes sadSpinnersClockwise {
+@-webkit-keyframes sadSpinnersClockwise {
   from {
+    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
 
   to {
+    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
+  }
+}
+
+@keyframes sadSpinnersClockwise {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes sadSpinnersAntiClockwise {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
   }
 }
 
 @keyframes sadSpinnersAntiClockwise {
   from {
+    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
 
   to {
+    -webkit-transform: rotate(-360deg);
     transform: rotate(-360deg);
   }
 }
@@ -758,9 +949,18 @@ a:hover {
 .cart-product-checkout {
   height: inherit;
   padding: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column;
   flex-flow: column;
 }
 
@@ -770,8 +970,15 @@ a:hover {
   opacity: 0.7;
   font-size: 1.5rem;
   margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row;
   flex-flow: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 
 }
@@ -799,8 +1006,14 @@ a:hover {
 }
 
 .nearly-there-content-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   /* flex-flow: column; */
   color: #000;
@@ -810,9 +1023,18 @@ a:hover {
 
 .nearly-there-content {
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column;
   flex-flow: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 
 }
@@ -843,7 +1065,11 @@ a:hover {
 
 .smiley-face-wrap {
   min-width: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -856,42 +1082,76 @@ a:hover {
 
 
 .address-form-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   height: 800px;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   overflow: auto;
 }
 
 .buying-wrap {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column;
   flex-flow: column;
 
 }
 
 .product-at-checkout {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column;
   flex-flow: column;
 }
 
 .cart-checkout-image {
   height: 200px;
   /* width: 200px; */
+  -webkit-animation-name: spin;
   animation-name: spin;
+  -webkit-animation-duration: 30s;
   animation-duration: 30s;
+  -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
 
 }
 
 .checkout-items-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column;
   flex-flow: column;
 }
 
@@ -900,15 +1160,24 @@ a:hover {
 }
 
 .cart-items-modal {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
   display: flex !important;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
   justify-content: space-evenly;
   background-color: #676C69;
 }
 
 .modal-content {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
   display: flex !important;
   background-color: #676C69;
   color: #F4FFF7;
+  -webkit-box-orient: vertical !important;
+  -webkit-box-direction: normal !important;
+  -ms-flex-flow: column !important;
   flex-flow: column !important;
 }
 
@@ -924,9 +1193,18 @@ a:hover {
 
 .paying-side-wrap {
   height: 800px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column;
   flex-flow: column;
 
 }
@@ -934,17 +1212,25 @@ a:hover {
 .view-products-btn {
   background-color: #4A4D4B;
   color: #F4FFF7;
+  -webkit-box-shadow: none;
   box-shadow: none;
   border-radius: 0px !important;
   min-width: 275px !important;
   height: 45px;
   border: 1px solid #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .view-products-btn:hover {
+  -webkit-box-shadow: none !important;
   box-shadow: none !important;
   background-color: #f4fff71f !important;
 
@@ -958,14 +1244,23 @@ a:hover {
 .payment-btn {
   background-color: #4A4D4B;
   color: #F4FFF7;
+  -webkit-box-shadow: none;
   box-shadow: none;
   border-radius: 0px !important;
   min-width: 275px !important;
   height: 45px;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
   border: 1px solid #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   cursor: pointer;
 }
@@ -984,15 +1279,27 @@ a:hover {
 
 
 .btn-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .paypal-btn-wrap {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 
 }
@@ -1019,9 +1326,16 @@ a:hover {
 
 .actions-section {
   width: 100%;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
   display: flex !important;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 
@@ -1044,10 +1358,13 @@ STAFF: RECENT ORDERS
 .product-list-card,
 .profile-orders-card {
   background-color: transparent;
+  -webkit-box-shadow: none;
   box-shadow: none;
   border: none;
   border-radius: 0px !important;
   background: #F4FFF7;
+  -webkit-box-shadow: 5px 5px 30px #b9c2bc,
+    -5px -5px 30px #ffffff;
   box-shadow: 5px 5px 30px #b9c2bc,
     -5px -5px 30px #ffffff;
 }
@@ -1113,6 +1430,8 @@ CONTACT PAGE
   font-family: 'Roboto Condensed', sans-serif;
   cursor: pointer;
   opacity: 0.7;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
   transition: 0.2s;
 
 }
@@ -1151,17 +1470,25 @@ SIGN OUT PAGE
 }
 
 .sad-face-img-signout-1 {
+  -webkit-animation-name: sadSpinnersAntiClockwise;
   animation-name: sadSpinnersAntiClockwise;
+  -webkit-animation-duration: 15s;
   animation-duration: 15s;
+  -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
 
 }
 
 .sad-face-img-signout-2 {
+  -webkit-animation-name: sadSpinnersClockwise;
   animation-name: sadSpinnersClockwise;
+  -webkit-animation-duration: 15s;
   animation-duration: 15s;
+  -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
 
 }
@@ -1181,8 +1508,14 @@ SIGN IN PAGE
 */
 
 .main-signin-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -1946,10 +2279,8 @@ SIGN UP PAGE
   right: 0;
   bottom: 0;
   left: 0;
-  background: -moz-linear-gradient(top, transparent 0%, transparent 18%, rgba(0, 0, 0, 0.8) 99%, rgba(0, 0, 0, 0.8) 100%);
-  background: -webkit-linear-gradient(top, transparent 0%, transparent 18%, rgba(0, 0, 0, 0.8) 99%, rgba(0, 0, 0, 0.8) 100%);
-  background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(18%, transparent), color-stop(99%, rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8)));
   background: -o-linear-gradient(top, transparent 0%, transparent 18%, rgba(0, 0, 0, 0.8) 99%, rgba(0, 0, 0, 0.8) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(18%, transparent), color-stop(99%, rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8)));
   background: linear-gradient(to bottom, transparent 0%, transparent 18%, rgba(0, 0, 0, 0.8) 99%, rgba(0, 0, 0, 0.8) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#cc000000', GradientType=0);
 }
@@ -2296,3 +2627,4 @@ SIGN UP PAGE
   border-radius: 50%;
   margin-bottom: 20px;
 }
+
