@@ -207,6 +207,7 @@ a:hover {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
+  margin-left: 0px;
   display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
