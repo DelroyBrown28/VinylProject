@@ -1,3 +1,4 @@
+import django_heroku
 import os
 import environ
 import smtplib
@@ -155,3 +156,7 @@ if DEBUG is False:
 
     PAYPAL_CLIENT_ID = os.environ.get('PAYPAL_LIVE_CLIENT_ID')
     PAYPAL_SECRET_KEY = os.environ.get('PAYPAL_LIVE_SECRET_KEY')
+
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
