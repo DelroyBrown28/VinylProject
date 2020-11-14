@@ -20,11 +20,7 @@
                     <span class="count">{{ request|cart_item_count }}</span>
                 </a>
             </li>
-            <li class="d-inline-block d-md-none ml-md-0">
-                <a href="#" class="site-menu-toggle js-menu-toggle icons">
-                    <span><i class="fas fa-bars"></i></span>
-                </a>
-            </li>
+        
 
             {% if request.user.is_staff %}
             <li><a style="color: #000;" href="{% url 'staff:staff' %}">Staff</a></li>
@@ -33,3 +29,10 @@
         </ul>
     </div>
 </nav>
+
+<ul class="sidenav" id="mobile-demo">
+    <li><a href="sass.html">Sass</a></li>
+    <li><a href="badges.html">Components</a></li>
+    <li><a href="collapsible.html">Javascript</a></li>
+    <li><a href="mobile.html">Mobile</a></li>
+</ul>
