@@ -15,7 +15,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -132,7 +132,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 PAYPAL_CLIENT_ID = os.environ.get('PAYPAL_SANDOX_CLIENT_ID')
 PAYPAL_SECRET_KEY = os.environ.get('PAYPAL_SANDBOX_SECRET_KEY')
 
-if DEBUG is True:
+if DEBUG is False:
     SESSION_COOKIE_SECURE = True
     SECURE_BROWSER_XSS_FILTER = True
     SECURE_CONTENT_TYPE_NOSNIFF = True
