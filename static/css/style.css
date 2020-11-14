@@ -113,6 +113,24 @@ a:hover {
 
 }
 
+.staff-btn {
+  color: red;
+}
+
+.homepage-cart-icon {
+  position: relative;
+  padding: 10px 11px 10px 10px;
+  border: 2px solid #313331;
+  border-radius: 100px;
+}
+
+.home-count {
+  position: absolute;
+  bottom: -32px;
+  color: red;
+  
+}
+
 .btn-bar-btns img {
   opacity: 1;
 }
@@ -549,10 +567,7 @@ a:hover {
 
 }
 
-.product-detail-image {
-  /* height: 400px;
-  width: 400px; */
-}
+
 
 .product-quantity {
   width: 50%;
@@ -1561,7 +1576,6 @@ SIGN UP PAGE
 ============
 */
 
-.main-signup-wrap {}
 
 
 

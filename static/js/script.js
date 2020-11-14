@@ -1,6 +1,9 @@
 $(document).ready(function () {
     $('.modal').modal();
-    $('.tooltipped').tooltip();
     $('.sidenav').sidenav();
+    $('.tooltipped').tooltip({
+        'inDuration': 500,
+        'transitionMovement': 0,
+    });
 
 });

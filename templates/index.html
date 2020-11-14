@@ -1,5 +1,6 @@
 {% extends "product-detail-base.html" %}
 {% load static %}
+{% load cart_template_tags %}
 
 {% block content %}
 
@@ -8,28 +9,48 @@
 
         <h1 class="main-store-title flexed">V I N Y L
             <div class="button-bar flexed">
-                <a href="{% url 'cart:product-list' %}" class="tooltipped flexed btn-bar-btns" data-position="top"
-                    data-tooltip="S T O R E">
+                <a href="{% url 'cart:product-list' %}" class="tooltipped flexed btn-bar-btns"
+                data-position="top"
+                data-aos="fade-left"
+                data-aos-delay="500"
+                data-tooltip="V I N Y L <span style='visibility: hidden;'>.</span> S T O R E">
                     <span style="font-size: 25px;" class="material-icons">album</span>
                 </a>
-                <a href="{% url 'contact' %}" class="tooltipped flexed btn-bar-btns" data-position="top"
-                    data-tooltip="C O N T A C T">
+                <a href="{% url 'contact' %}" class="tooltipped flexed btn-bar-btns"
+                data-position="top"
+                data-aos="fade-down"
+                data-aos-delay="500"
+                data-tooltip="C O N T A C T">
                     <span style="font-size: 25px;" class="material-icons">perm_phone_msg</span>
                 </a>
 
                 {% if request.user.is_authenticated %}
-                <a href="{% url 'profile' %}" class="tooltipped flexed btn-bar-btns" data-position="top" data-tooltip="A C C O U N T">
+                <a href="{% url 'profile' %}" class="tooltipped flexed btn-bar-btns" data-position="top"
+                    data-tooltip="A C C O U N T">
                     <span style="font-size: 25px;" class="material-icons">account_box</span>
                 </a>
                 {% else %}
-                <a href="{% url 'account_login' %}" class="tooltipped flexed btn-bar-btns" data-position="top"
-                    data-tooltip="S I G N  I N">
+                <a href="{% url 'account_login' %}" class="tooltipped flexed btn-bar-btns"
+                data-position="top"
+                data-aos="fade-right"
+                data-aos-delay="500"
+                data-tooltip="S I G N <span style='visibility: hidden;'>.</span> I N">
                     <span style="font-size: 25px;" class="material-icons">login</span>
+                </a>
+                <a href="{% url 'cart:summary' %}" class="tooltipped flexed btn-bar-btns"
+                data-position="top"
+                data-aos="fade-up"
+                data-aos-delay="500"
+                data-tooltip="C A R T">
+                    <span class="homepage-cart-icon flexed" style="font-size: 25px;"><i
+                            class="fas fa-shopping-cart icons"></i>
+                        <span class="home-count">{{ request|cart_item_count }}</span>
+                    </span>
                 </a>
                 {% endif %}
 
                 {% if request.user.is_staff %}
-                <a href="{% url 'staff:staff' %}" class="tooltipped flexed btn-bar-btns" data-position="top"
+                <a href="{% url 'staff:staff' %}" class="tooltipped flexed btn-bar-btns staff-btn" data-position="top"
                     data-tooltip="S T A F F">
                     <span style="font-size: 25px;" class="material-icons">priority_high</span>
                 </a>
