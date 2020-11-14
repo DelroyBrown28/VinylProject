@@ -1,0 +1,1 @@
+web: gunicorn vinylMain.wsgi --log-file -
