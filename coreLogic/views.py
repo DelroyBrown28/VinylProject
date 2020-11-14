@@ -39,7 +39,7 @@ class ContactView(generic.FormView):
             name,
             message,
             email,
-            ['lymara_52@hotmail.com', 'delroy_jb@hotmail.co.uk'],
+            ['delroybrown.db@gmail.com'],
         )
         messages.info(
             self.request, "Thanks for getting in touch, we'll get back to you ASAP!")
