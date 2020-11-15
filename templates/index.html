@@ -26,7 +26,10 @@
 
                 {% if request.user.is_authenticated %}
                 <a href="{% url 'profile' %}" class="tooltipped flexed btn-bar-btns" data-position="top"
-                    data-tooltip="A C C O U N T">
+                data-position="top"
+                data-aos="fade-right"
+                data-aos-delay="500"    
+                data-tooltip="A C C O U N T">
                     <span style="font-size: 25px;" class="material-icons">account_box</span>
                 </a>
                 {% else %}
@@ -51,7 +54,10 @@
 
                 {% if request.user.is_staff %}
                 <a href="{% url 'staff:staff' %}" class="tooltipped flexed btn-bar-btns staff-btn" data-position="top"
-                    data-tooltip="S T A F F">
+                data-position="top"
+                data-aos="fade-up"
+                data-aos-delay="500"    
+                data-tooltip="S T A F F">
                     <span style="font-size: 25px;" class="material-icons">priority_high</span>
                 </a>
                 {% endif %}

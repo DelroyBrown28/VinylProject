@@ -4,6 +4,7 @@ $(document).ready(function () {
     $('.tooltipped').tooltip({
         'inDuration': 500,
         'transitionMovement': 0,
+        
     });
 
 });
