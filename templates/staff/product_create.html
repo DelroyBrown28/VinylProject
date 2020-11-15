@@ -7,13 +7,13 @@
 <div class="site-section">
     <div class="container">
             <div class="col-md-12">
-                <a href="{% url 'staff:product-list' %}">Back to Staff Portal</a>
+                <a href="{% url 'staff:product-list' %}" class="back-to-staff-btn">⟵ Back to Staff Portal</a>
                 <hr >
                 <h4>Add to inventory</h4>
                 <form method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form|crispy }}
-                    <button type="submit" class="destroy-btn">Add Product</button>
+                    <button type="submit" class="destroy-btn">Add/Update Product</button>
                 </form>
             </div>
     </div>
