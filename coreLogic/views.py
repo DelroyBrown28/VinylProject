@@ -33,8 +33,9 @@ class ContactView(generic.FormView):
     def form_valid(self, form):
         name = form.cleaned_data.get('name')
         email = form.cleaned_data.get('email')
+        contact = form.cleaned_data.get('contact')
         message = form.cleaned_data.get('message')
-
+        
         send_mail(
             name,
             message,

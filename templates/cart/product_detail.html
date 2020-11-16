@@ -5,7 +5,7 @@
 
 <body class="product-detail-body">
 
-    <div class="row product-container">
+    <div class="row mt-4 product-container">
 
         <div class="col-md-6 product-image-box" data-aos="fade">
             <a href="{% url 'cart:product-list' %}" class="flexed back-arrow">⟵</a>
@@ -19,7 +19,7 @@
             {% csrf_token %}
             <div class="row product-details-wrap">
                 <p class="product-detail-name">{{product.artist_name}}</p>
-                <p class="product-detail-album">{{product.album_title}}</p>
+                <p class="product-detail-album mb-5">{{product.album_title}}</p>
                 {{ form|crispy }}
             </div>
 

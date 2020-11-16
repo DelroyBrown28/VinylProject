@@ -30,10 +30,10 @@ class AddressForm(forms.Form):
     #     Address.objects.none(), required=False
     # )
 
-    street_name_and_number = forms.CharField()
-    town_or_city = forms.CharField()
-    county = forms.CharField()
-    postcode = forms.CharField()
+    street_name_and_number = forms.CharField(required=False)
+    town_or_city = forms.CharField(required=False)
+    county = forms.CharField(required=False)
+    postcode = forms.CharField(required=False)
     # billing_address_1 = forms.CharField()
     # billing_address_2 = forms.CharField()
     # billing_zip_code = forms.CharField()

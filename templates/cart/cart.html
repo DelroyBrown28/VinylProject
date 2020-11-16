@@ -31,14 +31,14 @@
                     <div class="input-group product-quantity mb-3">
                         <div class="input-group-prepend">
                             <a href="{% url 'cart:decrease-quantity' item.id %}"
-                                class="minus-btn btn btn-outline-primary">
+                                class="minus-btn">
                                 <i class="material-icons quantity-icons">arrow_drop_down</i>
                             </a>
                         </div>
                         <input type="text" class="form-control quantity-input text-center" value="{{ item.quantity }}">
                         <div class="input-group-append">
                             <a href="{% url 'cart:increase-quantity' item.id %}"
-                                class="minus-btn btn btn-outline-primary">
+                                class="minus-btn">
                                 <i class="material-icons quantity-icons">arrow_drop_up</i>
                             </a>
                         </div>

@@ -75,9 +75,7 @@ class Product(models.Model):
     def get_delete_url(self):
         return reverse("staff:product-delete", kwargs={"pk": self.pk})
         
-
     def get_price(self):
-
         return "{:.2f}".format(self.price / 100)
     
 

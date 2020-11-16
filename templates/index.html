@@ -32,6 +32,17 @@
                 data-tooltip="A C C O U N T">
                     <span style="font-size: 25px;" class="material-icons">account_box</span>
                 </a>
+                <a href="{% url 'cart:summary' %}" class="tooltipped flexed btn-bar-btns"
+                data-position="top"
+                data-aos="fade-up"
+                data-aos-delay="500"
+                data-tooltip="C A R T">
+                    <span class="homepage-cart-icon flexed" style="font-size: 25px;"><i
+                            class="fas fa-shopping-cart icons"></i>
+                        <span class="home-count">{{ request|cart_item_count }}</span>
+                    </span>
+                </a>
+
                 {% else %}
                 <a href="{% url 'account_login' %}" class="tooltipped flexed btn-bar-btns"
                 data-position="top"

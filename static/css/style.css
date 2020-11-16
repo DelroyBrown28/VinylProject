@@ -502,6 +502,10 @@ a:hover {
 
 }
 
+/* #div_id_quantity {
+  margin-top: 10px;
+} */
+
 .product-detail-box {
   border-right: 1px solid #F4FFF7;
 }
@@ -590,6 +594,7 @@ a:hover {
   border: none;
   border-bottom: 1px solid #fff;
   color: #fff;
+  text-align: center;
 }
 
 #id_format option {
@@ -792,6 +797,13 @@ a:hover {
   -ms-flex-pack: center;
   justify-content: center;
   color: #000;
+  border: 1px solid #313331;
+}
+
+.minus-btn:hover {
+  background-color: #313331;
+  color: #fff;
+  box-shadow: none !important;
 }
 
 .quantity-input {
@@ -1135,6 +1147,18 @@ a:hover {
 
 }
 
+.shipping-details-text {
+  color: #000;
+}
+
+#div_id_selected_shipping_address label,
+#div_id_street_name_and_number label, 
+#div_id_town_or_city label, 
+#div_id_county label, 
+#div_id_postcode label {
+  color: #000;
+}
+
 .product-at-checkout {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1415,7 +1439,7 @@ STAFF: RECENT ORDERS
   border: none;
   border-radius: 0px !important;
   background: #F4FFF7;
-  
+
 }
 
 .current-user-email {
