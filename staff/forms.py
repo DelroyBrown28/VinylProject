@@ -8,6 +8,7 @@ class ProductForm(forms.ModelForm):
         fields = [
             'artist_name',
             'album_title',
+            'slug',
             'image',
             'image_2',
             'price',

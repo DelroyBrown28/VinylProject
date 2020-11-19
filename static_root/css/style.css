@@ -113,6 +113,25 @@ a:hover {
 
 }
 
+.staff-btn {
+  color: red;
+}
+
+.homepage-cart-icon {
+  position: relative;
+  padding: 10px 11px 10px 10px;
+  border: 2px solid #313331;
+  border-radius: 100px;
+}
+
+.home-count {
+  font-size: 1.3rem;
+  position: absolute;
+  bottom: -30px;
+  color: red;
+
+}
+
 .btn-bar-btns img {
   opacity: 1;
 }
@@ -483,6 +502,10 @@ a:hover {
 
 }
 
+/* #div_id_quantity {
+  margin-top: 10px;
+} */
+
 .product-detail-box {
   border-right: 1px solid #F4FFF7;
 }
@@ -549,10 +572,7 @@ a:hover {
 
 }
 
-.product-detail-image {
-  /* height: 400px;
-  width: 400px; */
-}
+
 
 .product-quantity {
   width: 50%;
@@ -574,6 +594,7 @@ a:hover {
   border: none;
   border-bottom: 1px solid #fff;
   color: #fff;
+  text-align: center;
 }
 
 #id_format option {
@@ -776,6 +797,13 @@ a:hover {
   -ms-flex-pack: center;
   justify-content: center;
   color: #000;
+  border: 1px solid #313331;
+}
+
+.minus-btn:hover {
+  background-color: #313331;
+  color: #fff;
+  box-shadow: none !important;
 }
 
 .quantity-input {
@@ -1040,6 +1068,14 @@ a:hover {
 
 }
 
+
+@media (max-width: 845px) {
+  .nearly-there-content span {
+    font-size: 1.3rem;
+
+  }
+}
+
 .sign-up-btn {
   border: 1px solid #000;
   padding: 2px 10px;
@@ -1065,10 +1101,11 @@ a:hover {
 }
 
 .smiley-face-wrap {
-  min-width: 400px;
+  min-width: 300px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  flex-wrap: wrap;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
@@ -1108,6 +1145,18 @@ a:hover {
   -ms-flex-flow: column;
   flex-flow: column;
 
+}
+
+.shipping-details-text {
+  color: #000;
+}
+
+#div_id_selected_shipping_address label,
+#div_id_street_name_and_number label, 
+#div_id_town_or_city label, 
+#div_id_county label, 
+#div_id_postcode label {
+  color: #000;
 }
 
 .product-at-checkout {
@@ -1349,6 +1398,32 @@ a:hover {
   cursor: pointer;
 }
 
+.back-to-staff-btn,
+.add-inventory-btn {
+  border: 1px solid #313331;
+  padding: 6px;
+  background-color: #313331;
+  color: #fff;
+
+}
+
+.requiredField {
+  color: #000;
+}
+
+.clearablefileinput {
+  background-color: transparent;
+
+}
+
+#id_available_formats,
+#id_primary_category,
+#id_secondary_category {
+  border-bottom: 1px solid #313331 !important;
+  background-color: transparent;
+  border: none;
+}
+
 /*
 =================== 
 STAFF: RECENT ORDERS
@@ -1364,10 +1439,7 @@ STAFF: RECENT ORDERS
   border: none;
   border-radius: 0px !important;
   background: #F4FFF7;
-  -webkit-box-shadow: 5px 5px 30px #b9c2bc,
-    -5px -5px 30px #ffffff;
-  box-shadow: 5px 5px 30px #b9c2bc,
-    -5px -5px 30px #ffffff;
+
 }
 
 .current-user-email {
@@ -1561,7 +1633,6 @@ SIGN UP PAGE
 ============
 */
 
-.main-signup-wrap {}
 
 
 
@@ -2628,4 +2699,3 @@ SIGN UP PAGE
   border-radius: 50%;
   margin-bottom: 20px;
 }
-
