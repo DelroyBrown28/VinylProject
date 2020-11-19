@@ -20,6 +20,8 @@ class AddressAdmin(admin.ModelAdmin):
 class ProductAdmin(admin.ModelAdmin):
     search_fields = ['artist_name']
     list_filter = ['primary_category']
+    list_display = ['artist_name', 'album_title','primary_category', 'price', 'active']
+    list_editable = ['active', 'primary_category']
     prepopulated_fields = {"slug": ("album_title", "artist_name")}
     class Meta:
         model = Product
