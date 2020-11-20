@@ -13,12 +13,18 @@
         <div class="col-md-12 nearly-there-content-wrap">
             <div class="col-md-12 nearly-there-content">
 
-                <span>You're nearly there! But we need you to <a class="sign-up-btn"
-                        href="{% url 'account_signup' %}">sign
-                        up</a> before you can
-                    checkout.</span>
-                <small class="dont-worry-text" data-aos="fade" data-aos-delay="3000">Don't worry, it only takes a
-                    second.
+                <span>You're nearly there! But we need you to
+                    <a class="sign-up-btn" href="{% url 'account_signup' %}">
+                        signup
+                    </a>
+                    or
+                    <a class="sign-up-btn" href="{% url 'account_login' %}">
+                        sign in</a>
+
+                    before you can checkout.</span>
+                    
+                <small class="dont-worry-text" data-aos="fade" data-aos-delay="2500">
+                    Don't worry, it only takes a second.
                 </small>
 
                 <div class="progress mt-4" data-aos="fade" data-aos-delay="300">
