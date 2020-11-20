@@ -266,6 +266,84 @@ a:hover {
     */
 
 
+:root {
+  --timing: ease;
+}
+
+.scrollBar1 {
+  position: fixed;
+  bottom: 0vh;
+  left: 0;
+  height: 5px;
+  width: 0%;
+  background: #313331;
+  -webkit-transition: width 1000ms var(--timing);
+  transition: width 1000ms var(--timing);
+  text-align: right;
+  color: #fff;
+}
+
+.scrollBar1 span {
+  position: absolute;
+  top: -23px;
+  right: 15px;
+  font-size: 0.7em;
+  font-weight: 500;
+  display: block;
+  text-align: center;
+}
+
+.scrollBar1 span::after {
+  content: "%";
+  font-size: 0.8em;
+  position: absolute;
+  right: -15px;
+  bottom: 4px;
+  font-weight: 700;
+  opacity: 0.4;
+}
+
+.scrollBar2 {
+  position: fixed;
+  top: 0vh;
+  right: 0;
+  height: 5px;
+  width: 0%;
+  background: #313331;
+  -webkit-transition: width 1000ms var(--timing);
+  transition: width 1000ms var(--timing);
+  text-align: right;
+  color: #fff;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.scrollBar2 span {
+  position: absolute;
+  bottom: 3px;
+  left: 2px;
+  font-size: 0.7em;
+  font-weight: 500;
+  display: inline-block;
+  text-align: left;
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  -webkit-transform-origin: bottom right;
+  transform-origin: bottom left;
+}
+
+.scrollBar2 span::after {
+  content: "%";
+  font-size: 0.8em;
+  position: absolute;
+  right: -15px;
+  bottom: 4px;
+  font-weight: 700;
+  opacity: 0.4;
+}
+
 .genres-title {
   font-size: 1rem;
   color: #000;
@@ -1152,9 +1230,9 @@ a:hover {
 }
 
 #div_id_selected_shipping_address label,
-#div_id_street_name_and_number label, 
-#div_id_town_or_city label, 
-#div_id_county label, 
+#div_id_street_name_and_number label,
+#div_id_town_or_city label,
+#div_id_county label,
 #div_id_postcode label {
   color: #000;
 }
